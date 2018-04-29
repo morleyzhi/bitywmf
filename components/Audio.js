@@ -19,7 +19,7 @@ const Player = styled.button`
 
   text-align: center;
 
-  text-shadow: 0 1px 0 ${({ theme }) => theme.shadow};
+  text-shadow: 0 2px 0 ${({ theme }) => theme.shadow};
   font-size: 25px;
 
   color: white;
@@ -65,7 +65,7 @@ export default class Audio extends Component {
           onEnded={() => this.setState({ isPlaying: false })}
         >
           <source
-            src={`static/assets/audio/${lang}.ogg`}
+            src={`/static/assets/audio/${lang}.ogg`}
             type="audio/ogg; codecs=vorbis"
           />
         </audio>
