@@ -55,17 +55,19 @@ const Button = styled.a`
 
 const Nav = ({ lang }) => (
   <El>
-    {Object.keys(langs).map((l) => {
-      const { label, slug, colors } = langs[l];
+    {Object.keys(langs)
+      .sort()
+      .map((l) => {
+        const { label, slug, colors } = langs[l];
 
-      return (
-        <Link key={`link-${lang}`} href={`/${slug}`} passHref>
-          <Button {...colors} isSelected={lang === l}>
-            {label}
-          </Button>
-        </Link>
-      );
-    })}
+        return (
+          <Link key={`link-${lang}`} href={`/${slug}`} passHref>
+            <Button {...colors} isSelected={lang === l}>
+              {label}
+            </Button>
+          </Link>
+        );
+      })}
   </El>
 );
 
